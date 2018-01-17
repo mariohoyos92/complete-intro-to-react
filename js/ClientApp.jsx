@@ -1,14 +1,22 @@
 import React from "react";
 import { render } from "react-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+
+import Landing from "./Landing";
+import Search from "./Search";
+
+const FourOhFour = () => <h1>Uh OH</h1>;
 
 const App = () => (
-  <div className="app">
-    <div className="landing">
-      <h1> S Video </h1>
-      <input type="text" placeholder="search" />
-      <a>Or Browse All</a>
+  <BrowserRouter>
+    <div className="app">
+      <Switch>
+        <Route exact path="/" component={Landing} />
+        <Route path="/search" component={Search} />
+        <Route component={FourOhFour} />
+      </Switch>
     </div>
-  </div>
+  </BrowserRouter>
 );
 
 render(<App />, document.getElementById("app"));
