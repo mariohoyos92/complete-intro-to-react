@@ -1,6 +1,7 @@
 {
-    "extends": ["airbnb", "prettier", "prettier/react"],
+    "extends": ["plugin:flowtype/recommended","airbnb", "prettier", "prettier/react"],
     "plugins": [
+        "flowtype",
         "prettier"
     ],
     "parserOptions": {
